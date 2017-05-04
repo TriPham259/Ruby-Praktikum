@@ -1,8 +1,8 @@
 def kreuz(n,chars)
   if n % 2 == 1 && n > 0
     for i in (0...n/2) do
-      for j in (0...n/2) do
-        print " "
+      for j in (0...n/2) do 
+        print " "*chars.size
       end
       puts chars
     end
@@ -14,7 +14,7 @@ def kreuz(n,chars)
     
     for i in (0...n/2) do
       for j in (0...n/2) do
-        print " "
+        print " "*chars.size
       end
       puts chars
     end
@@ -39,7 +39,7 @@ def dreieck2(n,chars)
   if n % 2 == 1 && n > 0
     n.downto(0) {|i|
       (n-i).times do
-        print " "
+        print " "*chars.size
       end
         
       i.times do
@@ -56,17 +56,17 @@ end
 def dreieck3(n,chars)
   if n % 2 == 1 && n > 0
      (n / 2).times do
-        print " "
+        print " "*chars.size
      end
      puts chars
      
      for i in (1...n/2) do
        (n / 2 - i).times do
-         print " "
+         print " "*chars.size
        end
        print chars
        (2 * i - 1).times do
-         print " "
+         print " "*chars.size
        end
        puts chars
      end
@@ -79,4 +79,7 @@ def dreieck3(n,chars)
   end
 end
 
-kreuz(7,"o")
+kreuz(7,"ghk")
+  dreieck1(7,"ghk")
+  dreieck2(7,"ghk")
+  dreieck3(7,"ghk")
