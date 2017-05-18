@@ -1,6 +1,6 @@
-require "Set"
-require "Relation"
-require "Tupel"
+require 'Set'
+require './Relation'
+require './Tupel'
 
 class RelationenGenerator
   def RelationenGenerator.generiere_relation(set_a,set_b,k)
