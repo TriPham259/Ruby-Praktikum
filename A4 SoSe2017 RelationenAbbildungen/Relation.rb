@@ -1,18 +1,27 @@
 require './Potenzmenge'
 require './Tupel'
+require './RelationenGenerator'
 
 class Relation
   include Enumerable  # use for mixing in Enumerable Module
-
-  attr_reader :set_a, :set_b
-
-  def initialize(set_a, set_b)
+  #attr_reader :set_a, :set_b
+  def initialize(set_a , set_b )
     #make sure arguments are Set
     raise 'Ungültige Parameter' if !set_a.is_a?(Set) || !set_b.is_a?(Set)
 
     @set_a = set_a.clone
     @set_b = set_b.clone
     @relation = Set.new
+
+    @set_nicht_angegeben = (set_a.size == 0)
+  end
+
+  def set_a()
+    return @set_a
+  end
+
+  def set_b()
+    return @set_b
   end
 
   def add(tupel)
@@ -25,8 +34,18 @@ class Relation
     end
 
     # return old Relation if Tupel is not valid
-    self
+    @relation
   end
+
+  #  def add(*a_tupel)
+  #    a_tupel.each {|tupel|
+  #      @relation << tupel
+  #      if @set_nicht_angegeben
+  #        @set_a << tupel.a
+  #        @set_b << tupel.b
+  #      end
+  #    }
+  #  end
 
   def size
     @relation.size
@@ -39,9 +58,15 @@ class Relation
 
   #============================ R ⊆ A x A ============================
   # für alle a ϵ A, (a,a) ϵ R
-  def reflexiv?
+  def reflexiv?()
     # @relation.include?(a,a)
-    @set_a.all? {|elem| include?(Tupel.new(elem,elem))}
+    if @set_a.all? {|elem| @relation.include?(Tupel.new(elem,elem))}
+      #    @set_a.each{|elem| return false if !@relation.include?(Tupel.new(elem,elem))}
+      return true
+    else
+      return false
+
+    end
   end
 
   # (a,b) ϵ R => (b,a) ϵ R
@@ -71,7 +96,6 @@ class Relation
       }
     }
   end
-
 
   #============================ R ⊆ A x B ============================
   # für alle a ϵ A, (a,b) ϵ R und (a,c) ϵ R => b = c
@@ -198,6 +222,26 @@ class Relation
     new_relation
   end
 
+  # Abbildung
+  def abbildung?
+
+     links_total? and rechts_eindeutig?
+    
+
+  end
+
+  def injektiv?
+    if @relation.abbildung?
+      @relation.links_eindeutig?
+    end
+  end
+
+  def surjektiv?
+    if @relation.abbildung?
+      @relation.rechts_total?
+    end
+  end
+
   def to_s
     # return empty Relation when Relation's size equal 0
     return 'Relation{}' if size == 0
@@ -205,8 +249,8 @@ class Relation
     # map elements from Relation to an array
     relation_s = "Relation{#{@relation.map { |x| x.to_s }}}"
 
-    # remove square brackets and double quotes
-    # relation_s.delete('[]"')
+    #     remove square brackets and double quotes
+    relation_s.delete('[]"')
   end
 
 end
@@ -223,3 +267,42 @@ end
 # puts t.reflexiv?
 #
 # puts t.to_s
+
+t = Relation.new(Set.new([1,2,3]),Set.new([1,2,3]))
+t1 = Tupel.new(1,1)
+t2 = Tupel.new(2,2)
+t3 = Tupel.new(5,5)
+t.add(t1)
+t.add(t2)
+t.add(t3)
+puts t.to_s
+#puts t.reflexiv?
+#puts t.symmetrisch?
+#puts t.asymmetrisch?
+#puts t.anti_symmetrisch?
+#puts t.transitiv?
+#puts t.rechts_eindeutig?
+#puts t.links_eindeutig?
+#puts t.rechts_total?
+#puts t.links_total?
+
+z = Relation.new(Set.new([1,2,3]),Set.new([1,2,3]))
+t1 = Tupel.new(2,3)
+t2 = Tupel.new(1,2)
+t3=Tupel.new(3,1)
+z.add(t1)
+z.add(t2)
+z.add(t3)
+puts z.to_s
+#puts z.reflexiv?
+#puts z.symmetrisch?
+#puts z.asymmetrisch?
+#puts z.anti_symmetrisch?
+#puts z.transitiv?
+#puts z.rechts_eindeutig?
+#puts z.links_eindeutig?
+#puts z.rechts_total?
+#puts z.links_total?
+
+#y = t.verknuepfe(z)
+#puts y.to_s

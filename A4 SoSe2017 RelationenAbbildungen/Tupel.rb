@@ -1,11 +1,13 @@
 class Tupel
-  attr_reader :a, :b
+  
 
   def initialize(a,b)
     @a = a
     @b = b
   end
 
+  attr_reader :a, :b
+  
   def ==(other)
     return false if other.nil?
     return true if self.equal?(other)
@@ -30,3 +32,4 @@ end
 # t = Tupel.new(3,5)
 # t1 = Tupel.new(3,5)
 # puts t == t1
+
