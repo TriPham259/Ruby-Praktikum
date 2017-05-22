@@ -27,7 +27,7 @@ class Set
   def to_s() 
     return "Set{}" if size() == 0
     r= "Set{#{self.map(){|x| x }}}"
-    r[-2,r.size()-1] = r[-1,r.size()-1]
+    r.delete("[]")    #r[-2,r.size()-1] = r[-1,r.size()-1]
     return r
   end
 end
@@ -66,3 +66,5 @@ end
 p = Potenzmenge.new(Set.new([1,2,3,4]))
 
 puts p
+
+
