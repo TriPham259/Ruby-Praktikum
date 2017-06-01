@@ -39,5 +39,5 @@ end
 #    end
 #  end
 #end
- RelationenGenerator.generiere_relation(Set.new([2,2]),Set.new([3,2]),3)
+
 

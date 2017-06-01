@@ -1,6 +1,5 @@
 require './Potenzmenge.rb'
 require './Tupel.rb'
-# require './RelationenGenerator'
 
 class Relation
   include Enumerable  # use for mixing in Enumerable Module
@@ -89,7 +88,7 @@ class Relation
   end
 
   # für alle a ϵ A, (b,a) ϵ R und (c,a) ϵ R => b = c
-  def links_eundeutig?
+  def links_eindeutig?
     # für alle (a1,b1) und (a2,b2) gibt es NUR EINE b1 == b2
     @relation.all? {|tupel_1|
       @relation.one? {|tupel_2|
@@ -204,22 +203,37 @@ class Relation
 
   # Abbildung
   def abbildung?
-
-     links_total? and rechts_eindeutig?
-    
-
+     links_total? && rechts_eindeutig?
   end
 
   def injektiv?
-    if @relation.abbildung?
-      @relation.links_eindeutig?
-    end
+    abbildung? && links_eundeutig?
   end
 
   def surjektiv?
-    if @relation.abbildung?
-      @relation.rechts_total?
-    end
+    abbildung? && rechts_total?
+  end
+
+  def urbild
+    # make sure Relation is Abbildung
+    raise 'Die Relation ist keine Abbildung.' unless abbildung?
+
+    # create Relation urbild from Potenzmenge of set_b to Pootenzmenge of set_a
+    p_set_a = set_a.potenzmenge
+    p_set_b = set_b.potenzmenge
+    urbild_rel = Relation.new(p_set_b, p_set_a)
+
+    # find the Urbildmenge for every subset of set_b
+    p_set_b.each {|subset_b|
+      subset_a = Set.new(
+          set_a.select{ |elem|
+            self.any? { |tupel| elem == tupel.a && subset_b.include?(tupel.b)}
+          }
+      )
+      urbild_rel.add(Tupel.new(subset_b, subset_a))
+    }
+
+    urbild_rel
   end
 
   def to_s
@@ -248,14 +262,14 @@ end
 #
 # puts t.to_s
 
-t = Relation.new(Set.new([1,2,3]),Set.new([1,2,3]))
-t1 = Tupel.new(1,1)
-t2 = Tupel.new(2,2)
-t3 = Tupel.new(5,5)
-t.add(t1)
-t.add(t2)
-t.add(t3)
-puts t.to_s
+# t = Relation.new(Set.new([1,2,3]),Set.new([1,2,3]))
+# t1 = Tupel.new(1,1)
+# t2 = Tupel.new(2,2)
+# t3 = Tupel.new(5,5)
+# t.add(t1)
+# t.add(t2)
+# t.add(t3)
+# puts t.to_s
 #puts t.reflexiv?
 #puts t.symmetrisch?
 #puts t.asymmetrisch?
@@ -266,14 +280,14 @@ puts t.to_s
 #puts t.rechts_total?
 #puts t.links_total?
 
-z = Relation.new(Set.new([1,2,3]),Set.new([1,2,3]))
-t1 = Tupel.new(2,3)
-t2 = Tupel.new(1,2)
-t3=Tupel.new(3,1)
-z.add(t1)
-z.add(t2)
-z.add(t3)
-puts z.to_s
+# z = Relation.new(Set.new([1,2,3]),Set.new([1,2,3]))
+# t1 = Tupel.new(2,3)
+# t2 = Tupel.new(1,2)
+# t3=Tupel.new(3,1)
+# z.add(t1)
+# z.add(t2)
+# z.add(t3)
+# puts z.to_s
 #puts z.reflexiv?
 #puts z.symmetrisch?
 #puts z.asymmetrisch?
@@ -286,3 +300,11 @@ puts z.to_s
 
 #y = t.verknuepfe(z)
 #puts y.to_s
+
+u = Relation.new(Set.new([1,2,3]),Set.new([3,4]))
+u1 = Tupel.new(1,3)
+u2 = Tupel.new(2,4)
+u3 = Tupel.new(3,3)
+u.add(u1).add(u2).add(u3)
+puts u.to_s
+puts u.urbild.to_s
