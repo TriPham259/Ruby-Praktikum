@@ -22,22 +22,21 @@ class RelationenGenerator
     relation
   end
 
+  def RelationenGenerator.generiere_abbildung(set_a,set_b)
+    #TODO
+    relation = Relation.new(set_a,set_b)
+    
+      rand_a = rand(set_a.size)                                        # "index" of a random element
+      rand_b = rand(set_b.size)
+      
+      relation.add(Tupel.new(set_a.to_a[rand_a], set_b.to_a[rand_b]))
+
+    if relation.abbildung?
+      return relation
+    else
+      puts 'Keine Abbildung.'
+    end
+  end
 end
-#  def RelationenGenerator.generiere_abbildung(set_a,set_b)
-#    #TODO
-#    relation = Relation.new(set_a,set_b)
-#    
-#      rand_a = rand(set_a.size)                                        # "index" of a random element
-#      rand_b = rand(set_b.size)
-#      
-#      relation.add(Tupel.new(set_a.to_a[rand_a], set_b.to_a[rand_b]))
-#
-#    if relation.abbildung?
-#      return relation
-#    else
-#      puts 'Keine Abbildung.'
-#    end
-#  end
-#end
 
 

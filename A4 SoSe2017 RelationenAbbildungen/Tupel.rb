@@ -1,13 +1,11 @@
 class Tupel
-  
-
   def initialize(a,b)
     @a = a
     @b = b
   end
 
   attr_reader :a, :b
-  
+
   def ==(other)
     return false if other.nil?
     return true if self.equal?(other)
@@ -16,8 +14,16 @@ class Tupel
     @a == other.a && @b == other.b
   end
 
+  def reverse
+    Tupel.new(@b,@a)
+  end
+
   def eql?(other)
-    self == other
+    return false if other.nil?
+    return true if self.equal?(other)
+    return false if self.class != other.class
+
+    @a.eql?(other.a) && @b.eql?(other.b)
   end
 
   def hash

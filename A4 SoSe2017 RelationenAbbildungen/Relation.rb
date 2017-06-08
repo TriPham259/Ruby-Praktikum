@@ -3,6 +3,7 @@ require './Tupel.rb'
 
 class Relation
   include Enumerable  # use for mixing in Enumerable Module
+
   attr_reader :set_a, :set_b
   def initialize(set_a , set_b )
     #make sure arguments are Set
@@ -39,31 +40,27 @@ class Relation
   # für alle a ϵ A, (a,a) ϵ R
   def reflexiv?()
     # @relation.include?(a,a)
-    if @set_a.all? {|elem| @relation.include?(Tupel.new(elem,elem))}
-      #    @set_a.each{|elem| return false if !@relation.include?(Tupel.new(elem,elem))}
-      return true
-    else
-      return false
+    @set_a.all? {|elem| @relation.include?(Tupel.new(elem,elem))}
+    #    @set_a.each{|elem| return false if !@relation.include?(Tupel.new(elem,elem))}
 
-    end
   end
 
   # (a,b) ϵ R => (b,a) ϵ R
   def symmetrisch?
     # für jedes (a,b) ϵ R gibt's (b,a) ϵ R
-    @relation.all? {|tupel| @relation.include?(Tupel.new(tupel.b,tupel.a))}
+    @relation.all? {|tupel| @relation.include?(tupel.reverse)}
   end
 
   # (a,b) ϵ R => (b,a) (not ϵ) R
-  def asymmetrisch?
+  def asymmetrisch?          # !sym und {}
     # für jedes (a,b) ϵ R gibt's kein (b,a) ϵ R
-    @relation.all? {|tupel| !@relation.include?(Tupel.new(tupel.b,tupel.a))}
+    @relation.all? {|tupel| !@relation.include?(tupel.reverse)}
   end
 
   # (a,b) ϵ R und (b,a) ϵ R => a = b
   def anti_symmetrisch?
     # für alle (a,b) ϵ R muss es kein (b,a) geben, sonst muss a == b sein
-    @relation.all? {|tupel| (!@relation.include?(Tupel.new(tupel.b,tupel.a))) || (tupel.a == tupel.b)}
+    @relation.all? {|tupel| (!@relation.include?(tupel.reverse)) || (tupel.a == tupel.b)}
   end
 
   # (a,b) ϵ R und (b,c) ϵ R => (a,c) ϵ R
@@ -71,7 +68,7 @@ class Relation
     # für alle (a1,b1) und (a2,b2) ϵ R muss b1 != a2 sein, sonst muss (a1,b2) ϵ R
     @relation.all? {|tupel_1|
       @relation.all? {|tupel_2|
-        (tupel_2.a != tupel_1.b) || @relation.include?(Tupel.new(tupel_1.a,tupel_2.b))
+        !( tupel_1.b == tupel_2.a) || @relation.include?(Tupel.new(tupel_1.a,tupel_2.b))
       }
     }
   end
@@ -98,7 +95,7 @@ class Relation
   end
 
   # für alle b ϵ B, existiert a ϵ A mit (a,b) ϵ R
-  def recht_total?
+  def rechts_total?
     return true if @relation.size == 0
 
     # für alle b ϵ B, existiert (a,b') ϵ R: b' = b
@@ -165,7 +162,7 @@ class Relation
     clone_relation = kopiere
 
     # add symmetrische Tupel to clone_relation
-    clone_relation.to_a.each {|tupel| clone_relation.add(Tupel.new(tupel.b,tupel.a))}
+    self.each {|tupel| clone_relation.add(tupel.reverse)}
 
     clone_relation
   end
@@ -179,8 +176,8 @@ class Relation
 
     # add transitive Tupel to clone_relation until it's transitiv
     until clone_relation.transitiv?
-      clone_relation.to_a.each {|tupel_1|
-        clone_relation.to_a.each {|tupel_2|
+      self.each {|tupel_1|
+        self.each {|tupel_2|
           clone_relation.add(Tupel.new(tupel_1.a,tupel_2.b)) if tupel_1.b == tupel_2.a
         }
       }
@@ -195,7 +192,7 @@ class Relation
     new_relation = Relation.new(set_b, set_a)
 
     @relation.each {|tupel|
-      new_relation.add(Tupel.new(tupel.b, tupel.a))
+      new_relation.add(Tupel.new(tupel.reverse))
     }
 
     new_relation
@@ -203,7 +200,7 @@ class Relation
 
   # Abbildung
   def abbildung?
-     links_total? && rechts_eindeutig?
+    links_total? && rechts_eindeutig?
   end
 
   def injektiv?
@@ -226,26 +223,43 @@ class Relation
     # find the Urbildmenge for every subset of set_b
     p_set_b.each {|subset_b|
       subset_a = Set.new(
-          set_a.select{ |elem|
-            self.any? { |tupel| elem == tupel.a && subset_b.include?(tupel.b)}
-          }
+        set_a.select{ |elem|
+          self.any? { |tupel| elem == tupel.a && subset_b.include?(tupel.b)}
+        }
       )
       urbild_rel.add(Tupel.new(subset_b, subset_a))
     }
 
     urbild_rel
   end
+  
+  def ==(other)
+    return false if other.nil?
+    return true if self.equal?(other)
+    self.all?{|e| other.include?(e)}
+  end
 
   def to_s
-    # return empty Relation when Relation's size equal 0
-    return 'Relation{}' if size == 0
-
-    # map elements from Relation to an array
-    relation_s = "Relation{#{@relation.map { |x| x.to_s }}}"
-
-    #     remove square brackets and double quotes
-    relation_s.delete('[]"')
+    "{#{@relation.to_a().join(",")}}"
+    #    a=""
+    #    self.each{|elem|
+    #      a += ","+elem.to_s
+    #    }
+    #    #a = a[1..-1]                                         #slice a string/string.slice!
+    #    a.slice!(0)
+    #    return "(#{a})"
   end
+
+  #  def to_s
+  #    # return empty Relation when Relation's size equal 0
+  #    return 'Relation{}' if size == 0
+  #
+  #    # map elements from Relation to an array
+  #    relation_s = "Relation{#{@relation.map { |x| x.to_s }}}"
+  #
+  #    #     remove square brackets and double quotes
+  #    relation_s.delete('[]"')
+  #  end
 
 end
 
@@ -262,14 +276,16 @@ end
 #
 # puts t.to_s
 
-# t = Relation.new(Set.new([1,2,3]),Set.new([1,2,3]))
-# t1 = Tupel.new(1,1)
-# t2 = Tupel.new(2,2)
-# t3 = Tupel.new(5,5)
-# t.add(t1)
-# t.add(t2)
-# t.add(t3)
-# puts t.to_s
+t = Relation.new(Set.new([1,2,3]),Set.new([1,2,3]))
+t1 = Tupel.new(1,1)
+t11 = Tupel.new(1,1)
+t2 = Tupel.new(2,2)
+t3 = Tupel.new(5,5)
+t.add(t1)
+t.add(t11)
+t.add(t2)
+t.add(t3)
+puts t
 #puts t.reflexiv?
 #puts t.symmetrisch?
 #puts t.asymmetrisch?
@@ -286,6 +302,8 @@ end
 # t3=Tupel.new(3,1)
 # z.add(t1)
 # z.add(t2)
+#puts  z.symmetrischer_abschluss()
+#
 # z.add(t3)
 # puts z.to_s
 #puts z.reflexiv?
