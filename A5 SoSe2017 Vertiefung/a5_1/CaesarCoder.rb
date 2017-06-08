@@ -1,31 +1,53 @@
 class CaesarCoder
-  def initialize(original_datei,schluessel_zeichen)
+  attr_reader :original_datei, :schlussel_zeichen, :schlussel
+
+  def initialize(original_datei,schlussel_zeichen)
     @original_datei = original_datei
-    @schluessel = schluessel_zeichen
+    @schlussel_zeichen = schlussel_zeichen
+    @schlussel = schlussel_zeichen.upcase.ord - 'A'.ord     # displacement
   end
 
-  #TODO
-  def encode_file
-  
-  end
 
   # calculate encoded letter's bytecode
-  def encode(byte,sz = @schluessel)           # given are the to be encoded bytecode and the key
+  def encode(byte,sz = schlussel_zeichen)           # given are the to be encoded bytecode and the key
     # only letters will be encoded, numbers & special characters won't
     if ('A'..'Z').include?(byte.chr) || ('a'..'z').include?(byte.chr)
       start = (byte > 96) ? 'a'.ord : 'A'.ord       # determine the start-value for decoding a-z & A-Z
       anzahl_zeichen = 26                           # das deutsche Alphabet
-      abstand = sz.ord - byte.ord                   # "displacement"
 
-      (byte + abstand - start) % anzahl_zeichen + start
+      (byte + schlussel - start) % anzahl_zeichen + start
     else
       byte
     end
-
   end
-  
-  #TODO
+
+  # read from 'original', write to 'encoded'
+  def encode_file
+    # open 'orginal' to read from
+    File.open("#{original_datei}", 'r') {|fr|
+      # create 'encoded' to write to
+      File.open("./encoded_#{original_datei}",'w') { |fw|
+        # encode each letter and then write to 'encoded'
+        fr.each_byte { |byte|
+          fw << encode(byte).chr
+        }
+      }
+    }
+  end
+
+
+  # read from 'encoded', write to 'decoded'. decode = encode w/ negative key
   def decode_file
+    # Open 'encoded' to read from
+    File.open("./encoded_#{original_datei}",'r') { |fr|
+      # Open 'decoded' to write to
+      File.open("./decoded_#{original_datei}",'w') { |fw|
+        fr.each_byte { |byte|
+          # "decode" each byte and write to 'decoded'
+          fw << encode(byte, -schlussel)
+        }
+      }
+    }
 
   end
 
@@ -33,8 +55,8 @@ class CaesarCoder
 end
 
 
-cc = CaesarCoder.new("a5_1/plain.txt","C")
+cc = CaesarCoder.new('plain.txt','C')
 cc.encode_file
 cc.decode_file
 
-puts cc.encode('a'.ord,'d'.ord)
+# puts cc.encode('a'.ord,'d'.ord)

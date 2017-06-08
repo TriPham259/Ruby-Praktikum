@@ -4,7 +4,7 @@
     <list default="true" id="e1ef7c92-94fe-4fef-9f14-646a87365dec" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/A5 SoSe2017 Vertiefung.iml" afterPath="$PROJECT_DIR$/.idea/A5 SoSe2017 Vertiefung.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/a5_1/CaesarCoder.rb" afterPath="$PROJECT_DIR$/a5_1/CaesarCoder.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/a5_1/zeichen_lesen_und_schreiben.rb" afterPath="$PROJECT_DIR$/a5_1/zeichen_lesen_und_schreiben.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/a5_1/CaesarCoderTest.rb" afterPath="$PROJECT_DIR$/a5_1/CaesarCoderTest.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,8 +14,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/A5 SoSe2017 Vertiefung@test_encode__A5_SoSe2017_Vertiefung.coverage" NAME="test_encode: A5 SoSe2017 Vertiefung Coverage Results" MODIFIED="1496923832963" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="A5 SoSe2017 Vertiefung" />
-    <SUITE FILE_PATH="coverage/A5 SoSe2017 Vertiefung@CaesarCoder.coverage" NAME="CaesarCoder Coverage Results" MODIFIED="1496926554602" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/a5_1" MODULE_NAME="A5 SoSe2017 Vertiefung" />
+    <SUITE FILE_PATH="coverage/A5 SoSe2017 Vertiefung@test_encode__A5_SoSe2017_Vertiefung.coverage" NAME="test_encode: A5 SoSe2017 Vertiefung Coverage Results" MODIFIED="1496928847838" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="A5 SoSe2017 Vertiefung" />
+    <SUITE FILE_PATH="coverage/A5 SoSe2017 Vertiefung@Run_test__CaesarCoderTest___A5_SoSe2017_Vertiefung.coverage" NAME="Run test 'CaesarCoderTest': A5 SoSe2017 Vertiefung Coverage Results" MODIFIED="1496930074472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="A5 SoSe2017 Vertiefung" />
+    <SUITE FILE_PATH="coverage/A5 SoSe2017 Vertiefung@CaesarCoder.coverage" NAME="CaesarCoder Coverage Results" MODIFIED="1496929405548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/a5_1" MODULE_NAME="A5 SoSe2017 Vertiefung" />
     <SUITE FILE_PATH="coverage/A5 SoSe2017 Vertiefung@matrix_methoden.coverage" NAME="matrix_methoden Coverage Results" MODIFIED="1496920344916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/a5_3" MODULE_NAME="A5 SoSe2017 Vertiefung" />
     <SUITE FILE_PATH="coverage/A5 SoSe2017 Vertiefung@zeichen_lesen_und_schreiben.coverage" NAME="zeichen_lesen_und_schreiben Coverage Results" MODIFIED="1496924184835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/a5_1" MODULE_NAME="A5 SoSe2017 Vertiefung" />
   </component>
@@ -25,21 +26,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CaesarCoder.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CaesarCoder.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/a5_1/CaesarCoder.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="39" column="25" lean-forward="false" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+            <state relative-caret-position="388">
+              <caret line="43" column="19" lean-forward="false" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CaesarCoderTest.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CaesarCoderTest.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/a5_1/CaesarCoderTest.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="26" column="47" lean-forward="true" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
+            <state relative-caret-position="286">
+              <caret line="50" column="21" lean-forward="false" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -58,7 +59,7 @@
       <file leaf-file-name="zeichen_lesen_und_schreiben.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/a5_1/zeichen_lesen_und_schreiben.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
+            <state relative-caret-position="391">
               <caret line="32" column="18" lean-forward="true" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
               <folding />
             </state>
@@ -66,6 +67,14 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>schluessel</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>schlussel_zeichen</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -75,6 +84,7 @@
       <list>
         <option value="$PROJECT_DIR$/a5_3/matrix_methoden.rb" />
         <option value="$PROJECT_DIR$/a5_1/zeichen_lesen_und_schreiben.rb" />
+        <option value="$PROJECT_DIR$/a5_1/CaesarCoderTest.rb" />
         <option value="$PROJECT_DIR$/a5_1/CaesarCoder.rb" />
       </list>
     </option>
@@ -158,7 +168,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="js.eslint.eslintPackage" value="" />
   </component>
-  <component name="RunManager" selected="Ruby.CaesarCoder">
+  <component name="RunManager" selected="Test::Unit/Shoulda/Minitest.Run test 'CaesarCoderTest': A5 SoSe2017 Vertiefung">
     <configuration default="false" name="matrix_methoden" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
       <module name="A5 SoSe2017 Vertiefung" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -223,6 +233,31 @@
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="test_encode" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_METHOD" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Run test 'CaesarCoderTest': A5 SoSe2017 Vertiefung" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true">
+      <predefined_log_file id="RUBY_TESTUNIT" enabled="true" />
+      <module name="A5 SoSe2017 Vertiefung" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift) " />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/a5_1/CaesarCoderTest.rb" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
@@ -338,18 +373,20 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Ruby.matrix_methoden" />
       <item index="1" class="java.lang.String" itemvalue="Ruby.zeichen_lesen_und_schreiben" />
       <item index="2" class="java.lang.String" itemvalue="Ruby.CaesarCoder" />
       <item index="3" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_encode: A5 SoSe2017 Vertiefung" />
+      <item index="4" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.Run test 'CaesarCoderTest': A5 SoSe2017 Vertiefung" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Ruby.CaesarCoder" />
-        <item index="1" class="java.lang.String" itemvalue="Ruby.zeichen_lesen_und_schreiben" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.Run test 'CaesarCoderTest': A5 SoSe2017 Vertiefung" />
+        <item index="1" class="java.lang.String" itemvalue="Ruby.CaesarCoder" />
         <item index="2" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_encode: A5 SoSe2017 Vertiefung" />
-        <item index="3" class="java.lang.String" itemvalue="Ruby.matrix_methoden" />
+        <item index="3" class="java.lang.String" itemvalue="Ruby.zeichen_lesen_und_schreiben" />
+        <item index="4" class="java.lang.String" itemvalue="Ruby.matrix_methoden" />
       </list>
     </recent_temporary>
   </component>
@@ -365,17 +402,44 @@
       <updated>1495472570613</updated>
       <workItem from="1495472572332" duration="8178000" />
       <workItem from="1496345212767" duration="637000" />
-      <workItem from="1496919089911" duration="6892000" />
+      <workItem from="1496919089911" duration="10386000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="test_encode__A5_SoSe2017_Vertiefung - 2017.06.08 at 14h 10m 34s.xml">
-      <configuration name="test_encode: A5 SoSe2017 Vertiefung" configurationId="TestUnitRunConfigurationType" />
+    <history-entry file="Run_test_'CaesarCoderTest'__A5_SoSe2017_Vertiefung - 2017.06.08 at 15h 46m 01s.xml">
+      <configuration name="Run test 'CaesarCoderTest': A5 SoSe2017 Vertiefung" configurationId="TestUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Run_test_'CaesarCoderTest'__A5_SoSe2017_Vertiefung - 2017.06.08 at 15h 46m 43s.xml">
+      <configuration name="Run test 'CaesarCoderTest': A5 SoSe2017 Vertiefung" configurationId="TestUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Run_test_'CaesarCoderTest'__A5_SoSe2017_Vertiefung - 2017.06.08 at 15h 46m 53s.xml">
+      <configuration name="Run test 'CaesarCoderTest': A5 SoSe2017 Vertiefung" configurationId="TestUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Run_test_'CaesarCoderTest'__A5_SoSe2017_Vertiefung - 2017.06.08 at 15h 49m 27s.xml">
+      <configuration name="Run test 'CaesarCoderTest': A5 SoSe2017 Vertiefung" configurationId="TestUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Run_test_'CaesarCoderTest'__A5_SoSe2017_Vertiefung - 2017.06.08 at 15h 50m 59s.xml">
+      <configuration name="Run test 'CaesarCoderTest': A5 SoSe2017 Vertiefung" configurationId="TestUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Run_test_'CaesarCoderTest'__A5_SoSe2017_Vertiefung - 2017.06.08 at 15h 52m 20s.xml">
+      <configuration name="Run test 'CaesarCoderTest': A5 SoSe2017 Vertiefung" configurationId="TestUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Run_test_'CaesarCoderTest'__A5_SoSe2017_Vertiefung - 2017.06.08 at 15h 52m 42s.xml">
+      <configuration name="Run test 'CaesarCoderTest': A5 SoSe2017 Vertiefung" configurationId="TestUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Run_test_'CaesarCoderTest'__A5_SoSe2017_Vertiefung - 2017.06.08 at 15h 53m 18s.xml">
+      <configuration name="Run test 'CaesarCoderTest': A5 SoSe2017 Vertiefung" configurationId="TestUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Run_test_'CaesarCoderTest'__A5_SoSe2017_Vertiefung - 2017.06.08 at 15h 53m 58s.xml">
+      <configuration name="Run test 'CaesarCoderTest': A5 SoSe2017 Vertiefung" configurationId="TestUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Run_test_'CaesarCoderTest'__A5_SoSe2017_Vertiefung - 2017.06.08 at 15h 54m 34s.xml">
+      <configuration name="Run test 'CaesarCoderTest': A5 SoSe2017 Vertiefung" configurationId="TestUnitRunConfigurationType" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15707000" />
+    <option name="totallyTimeSpent" value="19201000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -385,6 +449,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985073" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -396,7 +461,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -435,6 +499,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/a5_1/zeichen_lesen_und_schreiben.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="32" column="18" lean-forward="true" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/a5_1/plain.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -443,26 +515,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/a5_1/CaesarCoderTest.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="26" column="47" lean-forward="true" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/a5_1/zeichen_lesen_und_schreiben.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="32" column="18" lean-forward="true" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/a5_1/CaesarCoder.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="39" column="25" lean-forward="false" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+        <state relative-caret-position="388">
+          <caret line="43" column="19" lean-forward="false" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a5_1/CaesarCoderTest.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="50" column="21" lean-forward="false" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
           <folding />
         </state>
       </provider>
