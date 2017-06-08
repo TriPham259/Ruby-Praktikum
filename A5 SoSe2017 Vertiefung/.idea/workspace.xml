@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1ef7c92-94fe-4fef-9f14-646a87365dec" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/A5 SoSe2017 Vertiefung.iml" afterPath="$PROJECT_DIR$/.idea/A5 SoSe2017 Vertiefung.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/a5_1/CaesarCoder.rb" afterPath="$PROJECT_DIR$/a5_1/CaesarCoder.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/a5_1/CaesarCoderTest.rb" afterPath="$PROJECT_DIR$/a5_1/CaesarCoderTest.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/a5_1/decoded_plain.txt" afterPath="$PROJECT_DIR$/a5_1/decoded_plain.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,7 +16,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/A5 SoSe2017 Vertiefung@test_encode__A5_SoSe2017_Vertiefung.coverage" NAME="test_encode: A5 SoSe2017 Vertiefung Coverage Results" MODIFIED="1496928847838" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="A5 SoSe2017 Vertiefung" />
     <SUITE FILE_PATH="coverage/A5 SoSe2017 Vertiefung@Run_test__CaesarCoderTest___A5_SoSe2017_Vertiefung.coverage" NAME="Run test 'CaesarCoderTest': A5 SoSe2017 Vertiefung Coverage Results" MODIFIED="1496930074472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="A5 SoSe2017 Vertiefung" />
-    <SUITE FILE_PATH="coverage/A5 SoSe2017 Vertiefung@CaesarCoder.coverage" NAME="CaesarCoder Coverage Results" MODIFIED="1496929405548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/a5_1" MODULE_NAME="A5 SoSe2017 Vertiefung" />
+    <SUITE FILE_PATH="coverage/A5 SoSe2017 Vertiefung@CaesarCoder.coverage" NAME="CaesarCoder Coverage Results" MODIFIED="1496931604896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/a5_1" MODULE_NAME="A5 SoSe2017 Vertiefung" />
     <SUITE FILE_PATH="coverage/A5 SoSe2017 Vertiefung@matrix_methoden.coverage" NAME="matrix_methoden Coverage Results" MODIFIED="1496920344916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/a5_3" MODULE_NAME="A5 SoSe2017 Vertiefung" />
     <SUITE FILE_PATH="coverage/A5 SoSe2017 Vertiefung@zeichen_lesen_und_schreiben.coverage" NAME="zeichen_lesen_und_schreiben Coverage Results" MODIFIED="1496924184835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/a5_1" MODULE_NAME="A5 SoSe2017 Vertiefung" />
   </component>
@@ -26,20 +26,40 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CaesarCoder.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CaesarCoder.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/a5_1/CaesarCoder.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="43" column="19" lean-forward="false" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+            <state relative-caret-position="289">
+              <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CaesarCoderTest.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="encoded_plain.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/a5_1/encoded_plain.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="decoded_plain.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/a5_1/decoded_plain.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CaesarCoderTest.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/a5_1/CaesarCoderTest.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
+            <state relative-caret-position="850">
               <caret line="50" column="21" lean-forward="false" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
               <folding />
             </state>
@@ -168,7 +188,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="js.eslint.eslintPackage" value="" />
   </component>
-  <component name="RunManager" selected="Test::Unit/Shoulda/Minitest.Run test 'CaesarCoderTest': A5 SoSe2017 Vertiefung">
+  <component name="RunManager" selected="Ruby.CaesarCoder">
     <configuration default="false" name="matrix_methoden" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
       <module name="A5 SoSe2017 Vertiefung" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -382,8 +402,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.Run test 'CaesarCoderTest': A5 SoSe2017 Vertiefung" />
-        <item index="1" class="java.lang.String" itemvalue="Ruby.CaesarCoder" />
+        <item index="0" class="java.lang.String" itemvalue="Ruby.CaesarCoder" />
+        <item index="1" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.Run test 'CaesarCoderTest': A5 SoSe2017 Vertiefung" />
         <item index="2" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_encode: A5 SoSe2017 Vertiefung" />
         <item index="3" class="java.lang.String" itemvalue="Ruby.zeichen_lesen_und_schreiben" />
         <item index="4" class="java.lang.String" itemvalue="Ruby.matrix_methoden" />
@@ -402,7 +422,7 @@
       <updated>1495472570613</updated>
       <workItem from="1495472572332" duration="8178000" />
       <workItem from="1496345212767" duration="637000" />
-      <workItem from="1496919089911" duration="10386000" />
+      <workItem from="1496919089911" duration="10775000" />
     </task>
     <servers />
   </component>
@@ -439,7 +459,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19201000" />
+    <option name="totallyTimeSpent" value="19590000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -507,7 +527,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/a5_1/CaesarCoderTest.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="50" column="21" lean-forward="false" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/a5_1/plain.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a5_1/encoded_plain.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a5_1/decoded_plain.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -517,16 +561,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/a5_1/CaesarCoder.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="43" column="19" lean-forward="false" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/a5_1/CaesarCoderTest.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="50" column="21" lean-forward="false" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+        <state relative-caret-position="289">
+          <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
           <folding />
         </state>
       </provider>

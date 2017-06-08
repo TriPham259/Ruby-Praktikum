@@ -9,13 +9,13 @@ class CaesarCoder
 
 
   # calculate encoded letter's bytecode
-  def encode(byte,sz = schlussel_zeichen)           # given are the to be encoded bytecode and the key
+  def encode(byte,sz = schlussel)           # given are the to be encoded bytecode and the key
     # only letters will be encoded, numbers & special characters won't
     if ('A'..'Z').include?(byte.chr) || ('a'..'z').include?(byte.chr)
       start = (byte > 96) ? 'a'.ord : 'A'.ord       # determine the start-value for decoding a-z & A-Z
       anzahl_zeichen = 26                           # das deutsche Alphabet
 
-      (byte + schlussel - start) % anzahl_zeichen + start
+      (byte + sz - start) % anzahl_zeichen + start
     else
       byte
     end
@@ -44,7 +44,7 @@ class CaesarCoder
       File.open("./decoded_#{original_datei}",'w') { |fw|
         fr.each_byte { |byte|
           # "decode" each byte and write to 'decoded'
-          fw << encode(byte, -schlussel)
+          fw << encode(byte, -schlussel).chr
         }
       }
     }
