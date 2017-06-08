@@ -11,9 +11,11 @@ def gewichtet(mat)
 
   ergebnis = Array.new(zeile){Array.new(spalte)}
 
-  (0...zeile).cycle {|i|
-    (0...spalte).cycle {|j|
-      ergebnis[i][j] = (mat[i-1][j-1] + mat[i-1][j] + mat[i-1][j+1] + mat[i][j-1] + mat[i][j] + mat[i][j+1] + mat[i+1][j-1] + mat[i+1][j] + mat[i+1][j+1]) / 9
+  (0...zeile).each {|i|
+    (0...spalte).each {|j|
+      ergebnis[i][j] = (mat[(i-1) % zeile][(j-1) % spalte] + mat[(i-1) % zeile][j % spalte] + mat[(i-1) % zeile][(j+1) % spalte] +
+                        mat[i % zeile][(j-1) % spalte] + mat[i % zeile][j % spalte] + mat[i % zeile][(j+1) % spalte] +
+                        mat[(i+1) % zeile][(j-1) % spalte] + mat[(i+1) % zeile][j % spalte] + mat[(i+1) % zeile][(j+1) % spalte]) / 9.0
     }
   }
 
@@ -31,12 +33,12 @@ def pp_mat(mat)
   puts
 end
 
-puts matrix?(Array.new()) # false                                  1-dim
+puts matrix?(Array.new)                                 # false    1-dim
 puts matrix?(Array.new(4){|zeile| Array.new(zeile +1)}) # false    Dreiecksmatrix [[nil],[nil,nil],[nil,nil,nil],[nil,nil,nil,nil]]
-puts matrix?(Array.new(4,17)) # false                              1-dim, 4 elem/all are 17
-puts matrix?([[1]]) # true                                         2-dim, 1x1
-puts matrix?([[]]) # true                                          2-dim, 1x1
-puts matrix?(Array.new(4){Array.new(3,1)}) # true                  2-dim, 4x3/all are 1
+puts matrix?(Array.new(4,17))                           # false    1-dim, 4 elem/all are 17
+puts matrix?([[1]])                                     # true     2-dim, 1x1
+puts matrix?([[]])                                      # true     2-dim, 1x1
+puts matrix?(Array.new(4){Array.new(3,1)})              # true     2-dim, 4x3/all are 1
 
 
 #

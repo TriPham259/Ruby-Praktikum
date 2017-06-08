@@ -301,10 +301,10 @@ end
 #y = t.verknuepfe(z)
 #puts y.to_s
 
-u = Relation.new(Set.new([1,2,3]),Set.new([3,4]))
-u1 = Tupel.new(1,3)
-u2 = Tupel.new(2,4)
-u3 = Tupel.new(3,3)
-u.add(u1).add(u2).add(u3)
-puts u.to_s
-puts u.urbild.to_s
+# u = Relation.new(Set.new([1,2,3]),Set.new([3,4]))
+# u1 = Tupel.new(1,3)
+# u2 = Tupel.new(2,4)
+# u3 = Tupel.new(3,3)
+# u.add(u1).add(u2).add(u3)
+# puts u.to_s
+# puts u.urbild.to_s
