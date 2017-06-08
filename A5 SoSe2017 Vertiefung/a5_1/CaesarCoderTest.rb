@@ -4,10 +4,10 @@ require 'test/unit'
 
 class CaesarCoderTest < Test::Unit::TestCase
   def setup
-    @filename_orig = "a5_1/plain.txt"
-    @filename_encoded = "a5_1/plain.txt_encoded"
-    @filename_decoded = "a5_1/plain.txt_decoded"
-    @ccc = CaesarCoder.new("a5_1/plain.txt","C")
+    @filename_orig = 'plain.txt'
+    @filename_encoded = 'encoded_plain.txt'
+    @filename_decoded = 'decoded_plain.txt'
+    @ccc = CaesarCoder.new('plain.txt','C')
     @encoded_strings = "C D E F G H I J K L M N O P Q R S T U V W X Y Z A B
 MNQRR XGTNCGUUV FQTVOWPF -- CNU PCEJHQNIGT YKTF VWEJGN IGJCPFGNV."
 
@@ -48,7 +48,7 @@ MNQRR XGTNCGUUV FQTVOWPF -- CNU PCEJHQNIGT YKTF VWEJGN IGJCPFGNV."
   end
 
   def read_file_content(filename)
-    file = File.open(filename, 'r')
+    file = File.open('a5_1/' + filename, 'r')
     content = file.read
     puts content
     file.close
