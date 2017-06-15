@@ -1,21 +1,21 @@
 class Kasse
   attr_reader :rechnungen
   protected :rechnungen
-  def initialize()
+  def initialize
     @rechnungen = []
   end
 
   def <<(rechnung)
     @rechnungen << rechnung
-    return self
+    self
   end
 
-  def size()
-    return @rechnungen.size()
+  def size
+    @rechnungen.size
   end
 
-  def to_s()
-    return "Kasse:\n #{@rechnungen.join("\n ")}"
+  def to_s
+    "Kasse:\n #{@rechnungen.join("\n ")}"
   end
 
 end
@@ -32,14 +32,14 @@ class Rechnung
 
   def <<(pos)
     @positionen << pos
-    return self
+    self
   end
 
   def to_s(abbr=false)
     if abbr
       return "R#{@nr}"
     end
-    return "R#{@nr}:#{@positionen.join(",")}"
+    "R#{@nr}: #{@positionen.join(", ")}"
   end
 end
 
@@ -52,8 +52,8 @@ class Position
     @produkt = produkt
   end
 
-  def to_s()
-    return "#{@produkt}:#{preis}"
+  def to_s
+    "#{@produkt}:#{preis}"
   end
 end
 
