@@ -1,6 +1,8 @@
+Dir.chdir(File.dirname(__FILE__))
 require_relative 'CaesarCoder'
 
 require 'test/unit'
+
 
 class CaesarCoderTest < Test::Unit::TestCase
   def setup
@@ -48,7 +50,7 @@ MNQRR XGTNCGUUV FQTVOWPF -- CNU PCEJHQNIGT YKTF VWEJGN IGJCPFGNV."
   end
 
   def read_file_content(filename)
-    file = File.open('a5_1/' + filename, 'r')
+    file = File.open(filename, 'r')
     content = file.read
     puts content
     file.close
