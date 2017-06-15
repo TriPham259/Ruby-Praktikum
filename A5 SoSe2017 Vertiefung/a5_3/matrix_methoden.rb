@@ -1,7 +1,11 @@
 def matrix?(mat)
-  return false unless mat.is_a?(Array)
-  (0...(mat.size - 1)).all? {|z| mat[z].is_a?(Array) && mat[z].size == mat[z+1].size }  &&
-      mat[mat.size - 1].is_a?(Array) && mat[mat.size - 1].size == mat[0].size
+  # make sure mat is an Array & 1st elem is also an Array (~ 2-dim Array)
+  return false unless mat.is_a?(Array) && mat[0].is_a?(Array)
+
+  spalte = mat[0].size     # should be the size the "columm"
+
+  # make sure each element of mat is an Array and they all have the same size(as mat[0])
+  (0...(mat.size)).all? {|zeile| mat[zeile].is_a?(Array) && mat[zeile].size == spalte }
 end
 
 def gewichtet(mat)

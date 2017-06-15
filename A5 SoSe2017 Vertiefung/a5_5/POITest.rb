@@ -1,9 +1,10 @@
-require "test/unit"
-require_relative "POI"
-require "Set"
+require 'test/unit'
+require_relative 'POI'
+require 'Set'
+require 'C:\Program Files (x86)\JetBrains\RubyMine 2016.3.2\rubystubs22\marshal.rb'
 
 class POITest < Test::Unit::TestCase
-  def setup()
+  def setup
     @coord_eifel = Geokoordinate.new(48.8565056,2.3521334)
     @coord_eifel_diff = Geokoordinate.new(48.8565056,2.4)
     @coord_brandtor = Geokoordinate.new(52.51705655410402,13.393707275390625)
@@ -46,8 +47,8 @@ class POITest < Test::Unit::TestCase
           
     @poi_ary = [@poi3,@poi1,@poi2,@poi1_coord_diff,@poi2_attachments_diff]
 
-    @poi_set = Set.new()
-    @poi_set2 = Set.new()
+    @poi_set = Set.new
+    @poi_set2 = Set.new
     @poi_set << @poi1 << @poi2 << @poi3
     @poi_set2 << @poi1 << @poi2 << @poi3 
 
@@ -59,7 +60,7 @@ class POITest < Test::Unit::TestCase
     assert(@poi_ary.include?(@poi2_clone))
   end
 
-  def test_no_dups_in_set()
+  def test_no_dups_in_set
     @poi_set2 << @poi2_clone
     assert_equal(@poi_set2,@poi_set) 
   end
