@@ -1,7 +1,7 @@
 require 'test/unit'
 require_relative 'POI'
 require 'Set'
-require 'C:\Program Files (x86)\JetBrains\RubyMine 2016.3.2\rubystubs22\marshal.rb'
+require 'C:\Program Files (x86)\JetBrains\RubyMine 2016.3.2\rubystubs20\marshal.rb'
 
 class POITest < Test::Unit::TestCase
   def setup

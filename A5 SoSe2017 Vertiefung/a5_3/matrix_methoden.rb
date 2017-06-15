@@ -37,7 +37,8 @@ def pp_mat(mat)
   puts
 end
 
-puts matrix?(Array.new)                                 # false    1-dim
+puts matrix?(Array.new)
+# false    1-dim
 puts matrix?(Array.new(4){|zeile| Array.new(zeile +1)}) # false    Dreiecksmatrix [[nil],[nil,nil],[nil,nil,nil],[nil,nil,nil,nil]]
 puts matrix?(Array.new(4,17))                           # false    1-dim, 4 elem/all are 17
 puts matrix?([[1]])                                     # true     2-dim, 1x1
@@ -103,4 +104,4 @@ pp_mat(gewichtet(orig3))
 #5.666667 5.000000 6.000000 7.000000 6.333333 
 #6.666667 6.000000 7.000000 8.000000 7.333333 
 #7.666667 7.000000 8.000000 9.000000 8.333333 
-#6.333333 5.666667 6.666667 7.666667 7.000000 
+#6.333333 5.666667 6.666667 7.666667 7.000000

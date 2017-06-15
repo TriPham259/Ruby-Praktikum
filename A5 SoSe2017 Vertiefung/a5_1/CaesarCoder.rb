@@ -24,11 +24,11 @@ class CaesarCoder
   # read from 'original', write to 'encoded'
   def encode_file
     # open 'orginal' to read from
-    File.open("a5_1/#{original_datei}", 'r') {|fr|
+    File.open("#{original_datei}", 'r') {|fr|
       # create 'encoded' to write to
-      File.open("a5_1/encoded_#{original_datei}",'w') { |fw|
+      File.open("encoded_#{original_datei}",'w') { |fw|
         # encode each letter and then write to 'encoded'
-        fr.each_byte { |byte|
+        fr.each_byte{|byte|
           fw << encode(byte).chr
         }
       }
@@ -39,9 +39,9 @@ class CaesarCoder
   # read from 'encoded', write to 'decoded'. decode = encode w/ negative key
   def decode_file
     # Open 'encoded' to read from
-    File.open("a5_1/encoded_#{original_datei}",'r') { |fr|
+    File.open("encoded_#{original_datei}",'r') { |fr|
       # Open 'decoded' to write to
-      File.open("a5_1/decoded_#{original_datei}",'w') { |fw|
+      File.open("decoded_#{original_datei}",'w') { |fw|
         fr.each_byte { |byte|
           # "decode" each byte and write to 'decoded'
           fw << encode(byte, -schlussel).chr
