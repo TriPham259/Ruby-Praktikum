@@ -77,7 +77,7 @@ class Rechnung
   end
 
   def to_s
-    "R#{@nr}:(#{rechnungs_betrag}):#{count}/#{@positionen.size}:#{@positionen.join(",")}"
+    "R#{@nr}: (#{rechnungs_betrag}):#{count}/#{@positionen.size}:#{@positionen.join(",")}"
   end
 end
 
@@ -102,12 +102,12 @@ pos2 = Position.new('Pepsi',3,5)
 pos3 = Position.new('Sprite',2,4)
 pos4 = Position.new('Fanta',3,6)
 
-rechnung1 = Rechnung.new
+rechnung1 = Rechnung.new(1)
 rechnung1 << pos1 << pos3
 puts rechnung1
 
-rechnung2 = Rechnung.new
-rechnung2 = pos1 << pos3 << pos4
+rechnung2 = Rechnung.new(2)
+rechnung2 << pos1 << pos3 << pos4
 puts rechnung2
 
 my_kasse = Kasse.new
