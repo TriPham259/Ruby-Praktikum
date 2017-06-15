@@ -1,4 +1,4 @@
-Dir.chdir(File.dirname(__FILE__))
+Dir.chdir(File.dirname(__FILE__))  # change current directory to the same directory as the .rb file
 require_relative 'CaesarCoder'
 
 require 'test/unit'
