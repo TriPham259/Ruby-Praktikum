@@ -115,8 +115,13 @@ end
 
 # my_geo = Geokoordinate.new(56.34, 23.89)
 # your_geo = Geokoordinate.new(56.34, 23.89)
-# attach1 = Attachment.new("CollosVideo","prp1://video:videocollos1")
-# attach2 = Attachment.new("CollosVideo2","prp2://video:videocollos2")
+#attach1 = Attachment.new("CollosVideo","prp1://video:videocollos1")
+#attach2 = Attachment.new("CollosVideo","prp1://video:videocollos1")
+#require "Set"
+#set = Set.new()
+#
+#set << attach1 << attach2
+#puts set.to_a().join(" ")
 # list_attach1 = [] << attach1 << attach2
 # list_attach2 = [] << attach2 << attach1
 # print list_attach1 == list_attach2

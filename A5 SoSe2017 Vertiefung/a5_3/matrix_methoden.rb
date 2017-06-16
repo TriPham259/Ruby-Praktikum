@@ -6,22 +6,68 @@ def matrix?(mat)
 
   # make sure each element of mat is an Array and they all have the same size(as mat[0])
   (0...(mat.size)).all? {|zeile| mat[zeile].is_a?(Array) && mat[zeile].size == spalte }
+
+  # mat.each(){|zeile| zeile.is_a?(Array) && zeile.size() == spalte}
 end
 
-def gewichtet(mat)
+def gewichtet(mat)       # for "GOD-LIKE" gewichtet(mat,range)
+  # return nil if mat not legal
+  return nil unless matrix?(mat)
+
   # sizes of mat
   zeile = mat.size
   spalte = mat[0].size
 
-  ergebnis = Array.new(zeile){Array.new(spalte)}
+  ergebnis = Array.new(zeile){Array.new(spalte,0.0)}
 
-  (0...zeile).each {|i|
-    (0...spalte).each {|j|
-      ergebnis[i][j] = (mat[(i-1) % zeile][(j-1) % spalte] + mat[(i-1) % zeile][j % spalte] + mat[(i-1) % zeile][(j+1) % spalte] +
-                        mat[i % zeile][(j-1) % spalte] + mat[i % zeile][j % spalte] + mat[i % zeile][(j+1) % spalte] +
-                        mat[(i+1) % zeile][(j-1) % spalte] + mat[(i+1) % zeile][j % spalte] + mat[(i+1) % zeile][(j+1) % spalte]) / 9.0
+  #  for zeile in (0... anzahl_zeilen)
+  #    for spalte in (0... anzahl_spalten)
+  #      for zeilen_offset in (-1..1)
+  #        for spalten_offset in (-1..1)
+  #        #
+  #
+  #        end
+  #      end
+  #
+  #    end
+  #  end
+
+  # FAIRY
+  (0...zeile).each { |z|
+    (0...spalte).each { |s|
+
+      (-1..1).each {|range_z|
+        (-1..1).each { |range_s|
+          ergebnis[z][s] += mat[(z + range_z) % zeile][(s + range_s) % spalte]
+        }
+      }
+      ergebnis[z][s] /= 9.0
+
     }
   }
+
+  # GOD-LIKE  (need also a parameter range)
+  #  (0...zeile).each { |z|
+  #    (0...spalte).each { |s|
+  #
+  #      (-range..range).each {|range_z|
+  #        (-range..range).each { |range_s|
+  #          ergebnis[z][s] += mat[(z + range_z) % zeile][(s + range_s) % spalte]
+  #        }
+  #      }
+  #      ergebnis[z][s] /= ((2 * range + 1) ** 2).to_f
+  #
+  #    }
+  #  }
+
+  # WITCH
+  #  (0...zeile).each {|i|
+  #    (0...spalte).each {|j|
+  #      ergebnis[i][j] = (mat[(i-1) % zeile][(j-1) % spalte] + mat[(i-1) % zeile][j % spalte] + mat[(i-1) % zeile][(j+1) % spalte] +
+  #      mat[i % zeile][(j-1) % spalte] + mat[i % zeile][j % spalte] + mat[i % zeile][(j+1) % spalte] +
+  #      mat[(i+1) % zeile][(j-1) % spalte] + mat[(i+1) % zeile][j % spalte] + mat[(i+1) % zeile][(j+1) % spalte]) / 9.0
+  #    }
+  #  }
 
   ergebnis
 end
@@ -45,10 +91,9 @@ puts matrix?([[1]])                                     # true     2-dim, 1x1
 puts matrix?([[]])                                      # true     2-dim, 1x1
 puts matrix?(Array.new(4){Array.new(3,1)})              # true     2-dim, 4x3/all are 1
 
-
 #
 ### Ergebnisse fuer gewichtet
-# 
+#
 
 orig0 = Array.new(4){Array.new(3,1)}
 pp_mat(orig0)
@@ -90,18 +135,18 @@ pp_mat(gewichtet(orig2))
 
 orig3 = Array.new(7){|zeile| Array.new(5) {|spalte| zeile +spalte +1}}
 pp_mat(orig3)
-#1.000000 2.000000 3.000000 4.000000 5.000000 
-#2.000000 3.000000 4.000000 5.000000 6.000000 
-#3.000000 4.000000 5.000000 6.000000 7.000000 
-#4.000000 5.000000 6.000000 7.000000 8.000000 
-#5.000000 6.000000 7.000000 8.000000 9.000000 
-#6.000000 7.000000 8.000000 9.000000 10.000000 
+#1.000000 2.000000 3.000000 4.000000 5.000000
+#2.000000 3.000000 4.000000 5.000000 6.000000
+#3.000000 4.000000 5.000000 6.000000 7.000000
+#4.000000 5.000000 6.000000 7.000000 8.000000
+#5.000000 6.000000 7.000000 8.000000 9.000000
+#6.000000 7.000000 8.000000 9.000000 10.000000
 #7.000000 8.000000 9.000000 10.000000 11.000000
 pp_mat(gewichtet(orig3))
-#5.000000 4.333333 5.333333 6.333333 5.666667 
-#3.666667 3.000000 4.000000 5.000000 4.333333 
-#4.666667 4.000000 5.000000 6.000000 5.333333 
-#5.666667 5.000000 6.000000 7.000000 6.333333 
-#6.666667 6.000000 7.000000 8.000000 7.333333 
-#7.666667 7.000000 8.000000 9.000000 8.333333 
+#5.000000 4.333333 5.333333 6.333333 5.666667
+#3.666667 3.000000 4.000000 5.000000 4.333333
+#4.666667 4.000000 5.000000 6.000000 5.333333
+#5.666667 5.000000 6.000000 7.000000 6.333333
+#6.666667 6.000000 7.000000 8.000000 7.333333
+#7.666667 7.000000 8.000000 9.000000 8.333333
 #6.333333 5.666667 6.666667 7.666667 7.000000
