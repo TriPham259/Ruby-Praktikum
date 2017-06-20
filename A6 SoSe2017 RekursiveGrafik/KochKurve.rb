@@ -10,10 +10,11 @@ class KochKurve
   #
   # Der Drehwinkel ist eine für die Kochkurve feste Größe von 60 im Gradmass
   
-  def zeichnen(wdhl,x,y,kl)
+  def zeichnen(wdhl,x,y,kl = 600)
     @turtle = Turtle.new(x,y,0)
     @angle = 60
     @factor = 3.0
+    @kl = kl
     koch(wdhl,kl)
   end
 

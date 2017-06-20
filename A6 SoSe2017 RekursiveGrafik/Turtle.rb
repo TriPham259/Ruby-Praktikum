@@ -9,10 +9,10 @@ class Turtle
   attr_writer :pos
   attr_writer :angle
   
-  # Zu Beginn schaut die Turtle nach Osten (angle = 0)
+  # Zu Beginn schaut die Turtle nach Osten (angle = 90)
   #           Gradzahlen werden intern in Bogenmass umgerechnet
   #           und zeichnet bei jeder Bewegung (@down = true)
-  def initialize(x,y,angle = 0)
+  def initialize(x,y,angle = 90)
     super()
     @pos = Point.new(x,y)
     @angle = angle*Math::PI / 180
