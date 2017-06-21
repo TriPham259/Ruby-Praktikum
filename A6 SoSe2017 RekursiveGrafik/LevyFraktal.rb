@@ -26,11 +26,11 @@ class LevyFraktal
       @turtle.go_ahead(kl)
       return
     end
-    @turtle.turn_left(@angle) # +
+    @turtle.turn_left(@angle)     # +
     levy(n-1, (kl/@factor).round) # F
-    @turtle.turn_right(@angle) # -
-    @turtle.turn_right(@angle) # -
+    @turtle.turn_right(@angle)    # -
+    @turtle.turn_right(@angle)    # -
     levy(n-1, (kl/@factor).round) # F
-    @turtle.turn_left(@angle) # +
+    @turtle.turn_left(@angle)     # +
   end
 end

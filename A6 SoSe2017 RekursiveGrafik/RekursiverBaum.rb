@@ -28,11 +28,11 @@ class RekursiverBaum
     @turtle = Turtle.new(x,y,90)  # Zeichenwerkzeug
     case typ
     when BAUM1
-      baum1(wiederholungen, BAUM1_WINKEL,BAUM1_LAENGE, BAUM1_BREITE)
+      baum_1(wiederholungen, BAUM1_WINKEL,BAUM1_LAENGE, BAUM1_BREITE)
     when BAUM2
-      baum2(wiederholungen, BAUM2_WINKEL, BAUM2_LAENGE, BAUM2_BREITE)
+      baum_2(wiederholungen, BAUM2_WINKEL, BAUM2_LAENGE, BAUM2_BREITE)
     when BAUM3
-      baum3(wiederholungen, BAUM3_WINKEL, BAUM3_LAENGE, BAUM3_BREITE)
+      baum_3(wiederholungen, BAUM3_WINKEL, BAUM3_LAENGE, BAUM3_BREITE)
     else
       puts "Typ nicht bekannt"
     end
@@ -44,15 +44,48 @@ class RekursiverBaum
 
   
   # P =  {X -> F[+X]F[-X]+X}
-  def baum1(n,winkel,laenge,breite)
+  def baum_1(n,winkel,laenge,breite = BAUM1_BREITE)
+    if n == 0
+      @turtle.go_ahead(BAUM1_LAENGE)
+      return
+    end
+    
+    @turtle.go_ahead(BAUM1_LAENGE)                                          # F
+    @turtle.remember                                                        # [
+    @turtle.turn_left(BAUM1_WINKEL)                                         # +
+    baum_1(n-1, BAUM1_WINKEL, (BAUM1_LAENGE / @factor).round)               # X
+    @turtle.restore                                                         # ]
+    @turtle.go_ahead(BAUM1_LAENGE)                                          # F
+    @turtle.remember                                                        # [
+    @turtle.turn_right(BAUM1_WINKEL)                                        # -
+    baum_1(n-1, BAUM1_WINKEL, (BAUM1_LAENGE / @factor).round)               # X
+    @turtle.restore                                                         # ]
+    @turtle.turn_left(BAUM1_WINKEL)                                         # +
+    baum_1(n-1, BAUM1_WINKEL, (BAUM1_LAENGE / @factor).round)               # X
   end
   
   # P = {X-> F[+X][-X]FX}
-  def baum2(n,winkel,laenge, breite)
+  def baum_2(n,winkel,laenge, breite = BAUM2_BREITE)
+    if n == 0
+      @turtle.go_ahead(BAUM1_LAENGE)
+      return
+    end
+    
+    @turtle.go_ahead((BAUM2_LAENGE / @factor).round)                            # F
+    @turtle.remember                                          # [
+    @turtle.turn_left(BAUM2_WINKEL)                           # +
+    baum_2(n-1, BAUM2_WINKEL, (BAUM2_LAENGE / @factor).round) # X
+    @turtle.restore                                           # ] 
+    @turtle.remember                                          # [
+    @turtle.turn_right(BAUM2_WINKEL)                          # -
+    baum_2(n-1, BAUM2_WINKEL, (BAUM2_LAENGE / @factor).round) # X
+    @turtle.restore                                           # ]
+    @turtle.go_ahead((BAUM2_LAENGE / @factor ).round)                            # F
+    baum_2(n-1, BAUM2_WINKEL, (BAUM2_LAENGE / @factor).round) # X
   end
   
   # P = {X -> F-[[X]+X]+F+[+FX]-X}
-  def baum3(n,winkel,laenge,breite)
+  def baum_3(n,winkel,laenge,breite)
   end
   
 end
