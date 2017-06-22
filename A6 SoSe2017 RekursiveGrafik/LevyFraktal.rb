@@ -22,10 +22,13 @@ class LevyFraktal
 
   #P = { F → +F--F+ } 
   def levy(n,kl)
+    # Abbruchbedingung
     if n == 0
       @turtle.go_ahead(kl)
       return
     end
+    
+    # Rekursiver Aufruf F → +F--F+
     @turtle.turn_left(@angle)     # +
     levy(n-1, (kl/@factor).round) # F
     @turtle.turn_right(@angle)    # -
