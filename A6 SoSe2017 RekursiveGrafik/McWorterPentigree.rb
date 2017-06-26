@@ -24,5 +24,32 @@ class McWorterPentigree
   #  P = {F → +F++F----F--F++F++F-}
 
   def penti(n,kl)
+    # Abbruchbedingung
+    if n == 0
+      @turtle.go_ahead(kl)
+      return
+    end
+    
+    # Rekursiver Aufruf F → +F++F----F--F++F++F-
+    @turtle.turn_left(@angle)        # +
+    penti(n-1, (kl / @factor).round) # F
+    @turtle.turn_left(@angle)        # +
+    @turtle.turn_left(@angle)        # +
+    penti(n-1, (kl / @factor).round) # F
+    @turtle.turn_right(@angle)       # -
+    @turtle.turn_right(@angle)       # -
+    @turtle.turn_right(@angle)       # -
+    @turtle.turn_right(@angle)       # -
+    penti(n-1, (kl / @factor).round) # F
+    @turtle.turn_right(@angle)       # -
+    @turtle.turn_right(@angle)       # -
+    penti(n-1, (kl / @factor).round) # F
+    @turtle.turn_left(@angle)        # +
+    @turtle.turn_left(@angle)        # +
+    penti(n-1, (kl / @factor).round) # F
+    @turtle.turn_left(@angle)        # +
+    @turtle.turn_left(@angle)        # +
+    penti(n-1, (kl / @factor).round) # F
+    @turtle.turn_right(@angle)       # -
   end
 end
