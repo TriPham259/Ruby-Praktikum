@@ -12,10 +12,13 @@ def reverse_rek(ary, accu = [])
   raise ArgumentError, 'Der Parameter ist nicht vom Typ Array' unless ary.is_a?(Array)
     
   return accu if ary.empty?                      # base case
-  reverse_rek(ary.drop(1), ary.first(1) + accu)  # recursive case  
+  reverse_rek(ary.drop(1), ary.first(1) + accu)  # recursive case 
+  # reverse_rek(ary[0...-1], akku<<ary[-1]) 
 end
 
 puts geo_reihe(0.6,100)              # ~ 2.5
 
-ary = [1,[1,22,[5,7,0],8],2,3]
+ary = [1,[1,22,[5,7,0],8],2,3 ]
 puts "#{reverse_rek(ary)}"            # [3, 2, [1, 22, [5, 7, 0], 8], 1]
+
+puts [3]+[1,2]
