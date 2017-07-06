@@ -39,18 +39,23 @@ class Array
   @@dgbc_result = {}
     
   def deep_group_by_class
+    return {} if self == []
     self.each { |elem|
       # create new "Type-Element" for the first time encountering new Type
-      @@dgbc_result[elem.class.name] = [] unless @@dgbc_result.has_key?(elem.class.name)
+      type = elem.class
+      @@dgbc_result[type] = [] unless @@dgbc_result.has_key?(type)
      
       # add elem in value of corresponding Hash
-      @@dgbc_result[elem.class.name] << elem
+      @@dgbc_result[type] << elem
+      
       
       # if elem is Array, do again
-      elem.deep_group_by_class if elem.is_a?(Array)
+      elem.deep_group_by_class if elem.is_a?(Array) 
     }
     
+
     # return
+    # Hash[@@dgbc_result.map {|k, v| [k.to_sym,v]}].to_s.delete(':')
     @@dgbc_result
   end
 end
@@ -64,11 +69,10 @@ end
 #puts ln_i(2,500)
 #puts Math.log(2)
 #
-#puts [1,2].class.name
+#puts [1,2].class
 nested_ary = [[[[1]]], 8, {7 => "einzeln", 5 => [13]}]
 puts nested_ary.deep_group_by_class 
+ary = []
+puts ary.deep_group_by_class
 
-{"Array"=>[
-    {"Array"=>[{"Array"=>[{"Fixnum"=>[1]}, [1]]}, [[1]]]}, 
-    [[[1]]]  ]
-}
+
