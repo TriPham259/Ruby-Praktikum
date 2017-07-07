@@ -1,6 +1,28 @@
 # 10 Pkt
 class Kasse
   # TODO Initialisierung ihrer Loesung aus a2
+  include Enumerable
+  def initialize
+    @rechnungen = []
+  end
+
+  def each(&b)
+    @rechnungen.each(&b)
+  end
+
+  def produkt_haeufigkeiten
+    result = {}
+
+    self.each { |rechnung|
+      rechnung.each { |pos|
+        result[pos.produkt] = 0 unless result.has_key?(pos.produkt)
+        result[pos.produkt] += pos.anzahl
+      }
+    }
+
+    result
+  end
+
   # Gegeben
   def <<(rechnung)
     @rechnungen << rechnung
@@ -32,6 +54,37 @@ class Rechnung
   end
 
   # TODO Initialisierung ihrer Loesung aus a2
+  include Enumerable
+  include Comparable
+
+  @@count = 0
+
+  def initialize
+    @@count += 1
+    @nr = @@count
+    @positionen = []
+  end
+
+#  def initialize(nr)
+#    @nr = nr
+#    @positionen = []
+#  end
+
+  def each(&b)
+    @positionen.each(&b)
+  end
+
+  def rechnungs_betrag
+    self.inject(0) { |sum, pos| sum + pos.preis}
+  end
+
+  def count
+    self.inject(0) { |count, pos| count + pos.anzahl}
+  end
+
+  def <=>(other)
+    self.rechnungs_betrag <=> other.rechnungs_betrag
+  end
 
   # Gegeben
   def << pos
@@ -48,8 +101,17 @@ end
 class Position
 
   attr_reader :preis,:produkt,:anzahl
-
   # TODO Initialisierung ihrer Loesung aus a2
+  include Comparable
+  def initialize(produkt, anzahl, einzelpreis)
+    @produkt = produkt
+    @anzahl = anzahl
+    @preis = einzelpreis * anzahl
+  end
+
+  def <=>(other)
+    [self.preis, self.produkt] <=> [other.preis, other.produkt]
+  end
 
   def to_s()
     return "#{@produkt}(#{@anzahl}):#{preis}"
