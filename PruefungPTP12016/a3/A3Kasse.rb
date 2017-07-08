@@ -11,6 +11,10 @@ class Kasse
   def initialize
     @rechnungen = []
   end
+  
+  def clone
+    @rechnungen.map { |rechnung| rechnung.clone}
+  end
 
   def ==(other)
     return false if other.nil?
@@ -56,6 +60,13 @@ class Rechnung
   def initialize(nr)
     @nr = nr
     @positionen = []
+  end
+  
+  def clone
+    cloned = super
+    cloned.positionen = @positionen.map{ |pos| pos.clone}
+      
+    cloned
   end
 
   def ==(other)
@@ -106,6 +117,13 @@ class Position
   def initialize(produkt, preis)
     @produkt = produkt
     @preis = preis
+  end
+  
+  def clone
+    cloned = super
+    cloned.produkt
+    
+    cloned
   end
 
   def ==(other)
