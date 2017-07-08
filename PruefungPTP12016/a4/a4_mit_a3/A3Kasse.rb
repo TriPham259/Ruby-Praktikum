@@ -1,8 +1,11 @@
 class Kasse
   attr_reader :rechnungen
   protected :rechnungen
-
   # TODO Initialisierung ihrer Loesung aus a3
+  def initialize
+    @rechnungen = []
+  end
+
   # Gegeben
   def <<(rechnung)
     @rechnungen << rechnung
@@ -22,8 +25,12 @@ end
 class Rechnung
   attr_reader :positionen,:nr
   protected :positionen
-
   # TODO Initialisierung ihrer Loesung aus a3
+  def initialize(nr)
+    @nr = nr
+    @positionen = []
+  end
+
   # Gegeben
   def <<(pos)
     @positionen << pos
@@ -42,8 +49,12 @@ end
 class Position
 
   attr_reader :preis,:produkt
-
   # TODO Initialisierung ihrer Loesung aus a3
+  def initialize(produkt, preis)
+    @produkt = produkt
+    @preis = preis
+  end
+
   def to_s()
     return "#{@produkt}:#{preis}"
   end

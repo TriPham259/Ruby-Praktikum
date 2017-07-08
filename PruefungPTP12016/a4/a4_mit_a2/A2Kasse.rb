@@ -78,9 +78,9 @@ class Rechnung
     self.inject(0) { |sum, pos| sum + pos.preis}
   end
 
-  def count
-    self.inject(0) { |count, pos| count + pos.anzahl}
-  end
+#  def count
+#    self.inject(0) { |count, pos| count + pos.anzahl}
+#  end
 
   def <=>(other)
     self.rechnungs_betrag <=> other.rechnungs_betrag
@@ -103,10 +103,9 @@ class Position
   attr_reader :preis,:produkt,:anzahl
   # TODO Initialisierung ihrer Loesung aus a2
   include Comparable
-  def initialize(produkt, anzahl, einzelpreis)
+  def initialize(produkt, preis)
     @produkt = produkt
-    @anzahl = anzahl
-    @preis = einzelpreis * anzahl
+    @preis = preis
   end
 
   def <=>(other)

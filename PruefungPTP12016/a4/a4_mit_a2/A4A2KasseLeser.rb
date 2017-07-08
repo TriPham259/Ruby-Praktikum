@@ -5,6 +5,7 @@ class KasseLeser
   def self.lese_kasse_von(datei_name)
     kasse = Kasse.new
     
+    
     # read each line (1 line ~ 1 Rechnung)
     File.open(datei_name, 'r').each_line { |line|
       # only read valid lines
@@ -13,7 +14,7 @@ class KasseLeser
         rechnung_ary = line.strip.squeeze(' ').split('||')
 
         # create a new Rechnung
-        rechnung = Rechnung.new(Integer(rechnung_ary[0]))
+        rechnung = Rechnung.new
         (1...rechnung_ary.size).each { |i|
           # create position_ary from each elem of rechnung_ary(\[0]) (through splitting an elem of rechnung_ary with ';')
           position_ary = rechnung_ary[i].split(';')
@@ -35,4 +36,6 @@ class KasseLeser
   end
 
 end
+
+puts KasseLeser.lese_kasse_von('a4/rechnungen.sv')
 
