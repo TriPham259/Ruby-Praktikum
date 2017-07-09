@@ -29,15 +29,19 @@ end
 # TODO Methode deep_group_by_class fuer Arrays 1Pkt
 # 10 Pkt
 class Array
-  # creat new result-Hash for 1-time use (not in functionalities of recursive method)
-  @@dgbc_result = {}
-
   def deep_group_by_class
+    # creat new result-Hash for 1-time use (not in functionalities of recursive method)
+    @@dgbc_result = {}
+      
+    deep_group_by_class_intern(self)
+  end
+
+  def deep_group_by_class_intern(ary)
     # base case
-    return {} if self == []
+    return {} if ary == []
 
     # recursive case
-    self.each { |elem|
+    ary.each { |elem|
       # create new "Type-hash-pair" for the first time encountering a new Type
       type = elem.class
       @@dgbc_result[type] = [] unless @@dgbc_result.has_key?(type)
@@ -46,7 +50,7 @@ class Array
       @@dgbc_result[type] << elem
 
       # if elem is Array, do again
-      elem.deep_group_by_class if elem.is_a?(Array)
+      deep_group_by_class_intern(elem) if elem.is_a?(Array)
     }
 
     # return
@@ -75,10 +79,10 @@ def multi_value_reverse(h)
     }
   }
 
-#  h.each { |k,v|
-#    result[v] ||= [] # result[v] = result[v] || result[v] = []
-#    result[v] << k
-#  }
+  #  h.each { |k,v|
+  #    result[v] ||= [] # result[v] = result[v] || result[v] = []
+  #    result[v] << k
+  #  }
 
   result
 end
@@ -87,10 +91,10 @@ end
 #puts Math.log(2)
 #
 #puts [1,2].class
-#nested_ary = [[[[1]]], 8, {7 => "einzeln", 5 => [13]}]
-#puts nested_ary.deep_group_by_class
-#ary = []
-#puts ary.deep_group_by_class
+nested_ary = [[[[1]]], 8, {7 => "einzeln", 5 => [13]}]
+puts nested_ary.deep_group_by_class
+ary = []
+puts ary.deep_group_by_class
 
 #h = {:best1 => [:thetas, :myo, :hololens],
 #:best2 => [:gear_360, :soli, :vive] ,
