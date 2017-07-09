@@ -5,6 +5,7 @@ class Kasse
 
   # Gegeben
   attr_reader :rechnungen
+  attr_writer :rechnungen
   protected :rechnungen
 
   # TODO 's nach Aufgabenstellung
@@ -54,6 +55,7 @@ end
 class Rechnung
   # Gegeben
   attr_reader :positionen,:nr
+  attr_writer :positionen
   protected :positionen
 
   # TODO 's nach Aufgabenstellung
