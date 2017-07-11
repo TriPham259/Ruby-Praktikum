@@ -14,36 +14,37 @@ class Stockwerk
   
   # TODO 
   def anordnen_nach_y_x()
-
+    @raeume.sort { |a, b| a <=> b }
   end
 
   # TODO
   def kleinster_raum()
- 
+    @raeume.min { |a, b| a.flaeche <=> b.flaeche }
   end
 
   # TODO
   def raeume_mit_flaeche(flaeche)
- 
+    @raeume.select { |raum| raum.flaeche == flaeche }
   end
 
   # TODO
   def raum_mit_massen?(raum,toleranz)
- 
+    @raeume.select { |r| (r.breite - raum.breite).abs <= toleranz && (r.hoehe - raum.hoehe).abs <= toleranz }.size != 0
   end
 
   # TODO
   def minimal_umgebendes_rechteck()
-
+    Rechteck.new(Punkt.new(0,0), @raeume.map { |raum| raum.max_x }.max, @raeume.map { |raum| raum.max_y }.max)
   end
 
   # TODO
   def gesamt_flaeche()
-  
+    @raeume.inject(0) { |sum, raum| sum + raum.flaeche }
   end
 end
 
 class  Raum
+  include Comparable 
   def initialize(bez,geom)
     @bez = bez
     @geom = geom
@@ -82,6 +83,9 @@ class  Raum
   end
   
   # TODO Beitrag für Aufgabenteil d. 
+  def <=> other
+    [min_y, min_x] <=> [other.min_y, other.min_x] 
+  end  
 end
 
 class Rechteck

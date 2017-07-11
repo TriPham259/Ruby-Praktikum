@@ -1,7 +1,7 @@
-
 class Baum
 
   # TODO
+  include Enumerable
   
   attr_reader :start_knoten
   protected :start_knoten
@@ -23,25 +23,33 @@ class Baum
 
   # AB HIER EIGENE METHODENDEFINITIONEN
   # TODO Inhaltsgleichheit
+  def == other
+    return false if other.nil?
+    return true if self.equal?(other)
+    return false if self.class != other.class
 
+    [typ_inhalt, start_knoten] == [other.typ_inhalt, other.start_knoten]
+  end
   # TODO Iterator für Baum
-
+  def each(&b)
+    @start_knoten.each_node(&b)
+  end
   # TODO Einfuegen von Inhalten
   def einfuegen(eltern_knoten_inhalt,inhalt)
-
-  end
-
-  # TODO 
-  def zaehle(inhalt)
-   
-  end
-
-  # TODO 
-  def sortiere()
     
   end
 
-  # TODO Alle Inhalte finden, die die Bdg erfüllen 
+  # TODO
+  def zaehle(inhalt)
+
+  end
+
+  # TODO
+  def sortiere()
+
+  end
+
+  # TODO Alle Inhalte finden, die die Bdg erfüllen
   def alle_inhalte_fuer_bdg(&b)
   end
 
@@ -69,14 +77,22 @@ class Knoten
   end
 
   # AB HIER EIGENE METHODENDEFINITIONEN
-  # TODO 
+  # TODO
+  def == other
+    return false if other.nil?
+    return true if self.equal?(other)
+    return false if self.class != other.class
 
-  # TODO Iterator für Knoten 
-  def each_node(&b)
+    [inhalt, kind_knoten] == [other.inhalt, other.kind_knoten]
   end
 
-   # TODO Iterator für Knoteninhalte
-  
+  # TODO Iterator für Knoten
+  def each_node(&b)
+    kind_knoten.each(&b)
+  end
+
+  # TODO Iterator für Knoteninhalte
+
   # TODO Ordnungsrelation definieren 2 pkt
-  
+
 end
